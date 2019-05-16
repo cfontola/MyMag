@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <manager>
+        <username>cfontola</username>
+        <password>password</password>
+        <nome>Carlo</nome>
+        <cognome>Fontolan</cognome>
+        <sesso>Maschio</sesso>
+    </manager>
+    <admin>
+        <username>admin</username>
+        <password>password</password>
+        <nome>Administrator</nome>
+        <cognome>MyMagazine</cognome>
+        <sesso>Maschio</sesso>
+    </admin>
+    <manager>
+        <username>carius95</username>
+        <password>137950</password>
+        <nome>sdef</nome>
+        <cognome>wsdef</cognome>
+        <sesso>Maschio</sesso>
+    </manager>
+    <admin>
+        <username>admin2</username>
+        <password>password</password>
+        <nome>ciao</nome>
+        <cognome>bella</cognome>
+        <sesso>Femmina</sesso>
+    </admin>
+</database>
