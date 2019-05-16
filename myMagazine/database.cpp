@@ -141,7 +141,7 @@ void Database::loadUserDb(){
 
     bool file=true;
 
-    QFile UserFile("C:/Users/Carlo/Desktop/myMagazine/db/userDatabase.xml");
+    QFile UserFile("userDatabase.xml");
     if(!UserFile.open(QFile::ReadOnly | QFile::Text)){
         std::cout<<"Users database not found, load failed!"<<std::endl;
         file=false;
@@ -215,7 +215,7 @@ void Database::loadItemDb(){
     //QString MaterialQ;
     QString MaterialC;
 
-    QFile ItemFile("C:/Users/Carlo/Desktop/myMagazine/db/itemDatabase.xml");
+    QFile ItemFile("itemDatabase.xml");
     bool file=true;
 
     if(!ItemFile.open(QFile::ReadOnly | QFile::Text)){
@@ -302,7 +302,7 @@ void Database::loadItemDb(){
 }
 
 void Database::saveUserDb(){
-    QFile userFile("C:/Users/Carlo/Desktop/myMagazine/db/userDatabase.xml");
+    QFile userFile("userDatabase.xml");
     bool file=true;
 
     if(!userFile.open(QIODevice::WriteOnly)){
@@ -329,7 +329,7 @@ void Database::saveUserDb(){
 }
 
 void Database::saveItemDb(){
-    QFile animalFile("C:/Users/Carlo/Desktop/myMagazine/db/itemDatabase.xml");
+    QFile animalFile("itemDatabase.xml");
     bool file=true;
 
     if(!animalFile.open(QIODevice::WriteOnly)){
