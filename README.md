@@ -3,7 +3,7 @@
 ---Per aprire l'applicativo: Qt --> Open Project --> selezionare file .pro all'interno della repository --> scegliere il compilatore MinGw e confermare
 
 --- dati account:
-     || Admin:admin:password
+     || Admin:   admin:password
      || User1:   mario:password
      || User2:   cfontola:password
       
