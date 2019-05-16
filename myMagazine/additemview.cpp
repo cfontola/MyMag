@@ -12,32 +12,28 @@ addItemView::addItemView(User*a,Database* db,QWidget *parent) :
 
 
 {
-  Usn=db->getUserDb();
   ui->setupUi(this);
-  ui->cam1label->hide();
-  ui->cam2label->hide();
-  ui->checkBox_finger->hide();
-  ui->sensorlabel->hide();
-  ui->certificatelabel->hide();
-  ui->materiallabel->hide();
+  Usn=db->getUserDb();
   if(!dynamic_cast<Admin*>(a)){
       ui->UserBox->hide();
       ui->Userlabel->hide();
   }
-
   for(auto it=Usn.begin(); it!=Usn.end(); ++it){
       if(!dynamic_cast< const Admin*>(Usn[it])){
       ui->UserBox->addItem(Usn[it]->getUsername());
       }
   }
+  setGraphics();
   setWindowTitle("Inserimento nuovo oggetto");
   setFixedSize(this->geometry().width(),this->geometry().height());
-  connect(ui->radioSmartphone,SIGNAL(clicked()),this,SLOT(updatebtns()));
-  connect(ui->radioNotebook,SIGNAL(clicked()),this,SLOT(updatebtns()));
-  connect(ui->radioSmartwatch,SIGNAL(clicked()),this,SLOT(updatebtns()));
+  connect(ui->radioSmartphone,SIGNAL(clicked()),this,SLOT(update()));
+  connect(ui->radioNotebook,SIGNAL(clicked()),this,SLOT(update()));
+  connect(ui->radioSmartwatch,SIGNAL(clicked()),this,SLOT(update()));
   connect(ui->cancelbtn,SIGNAL(clicked()),this,SLOT(close()));
   connect(ui->confirmbtn,SIGNAL(clicked()),this,SLOT(Confirm()));
   this->move(QApplication::desktop()->availableGeometry().center() - this->rect().center());
+
+
 
 }
 addItemView::~addItemView()
@@ -45,8 +41,17 @@ addItemView::~addItemView()
     delete ui;
 }
 
+void addItemView::setGraphics(){
 
-void addItemView::updatebtns(){
+    ui->cam1label->hide();
+    ui->cam2label->hide();
+    ui->checkBox_finger->hide();
+    ui->sensorlabel->hide();
+    ui->certificatelabel->hide();
+    ui->materiallabel->hide();
+}
+
+void addItemView::update(){
     if(ui->radioNotebook->isChecked()){
         ui->checkBox_finger->hide();
         ui->cam1label->hide();
@@ -206,7 +211,7 @@ void addItemView::Confirm(){
                 msg->addButton("OK",QMessageBox::AcceptRole);
                 msg->setAttribute(Qt::WA_DeleteOnClose);
                 msg->show();
-                this->close();
+
                 }
 
             else if(ui->radioSmartphone->isChecked()){
@@ -218,7 +223,7 @@ void addItemView::Confirm(){
                 msg->addButton("OK",QMessageBox::AcceptRole);
                 msg->setAttribute(Qt::WA_DeleteOnClose);
                 msg->show();
-                this->close();
+
                 }
             else if(ui->radioSmartwatch->isChecked()){
                 const Smartwatch* s=new Smartwatch(user,codice,brand,processor,model,display,price,memory,sensor,certificate,material);
@@ -229,12 +234,13 @@ void addItemView::Confirm(){
                 msg->addButton("OK",QMessageBox::AcceptRole);
                 msg->setAttribute(Qt::WA_DeleteOnClose);
                 msg->show();
-                this->close();
+
             }
+    emit signalConfirm();
     }
 
 
-emit signalConfirm();
+
     }
     else{
         QMessageBox* msg =new QMessageBox();

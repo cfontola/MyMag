@@ -25,10 +25,6 @@ private:
     Ui::managerView *ui;
     User* manager;
     Database* DB;
-    Container<const Item*> notebook;
-    Container<const Item*> smartphone;
-    Container<const Item*> smartwatch;
-    Container<const Item*> item;
     addItemView* addItemUI;
     itemDataView * itemDataUI;
 public slots:
@@ -37,7 +33,7 @@ public slots:
     void Logout();
     void addItemData();
     void search();
-    void refreshtable();
+    void closeAddItemaData();
 signals:
     void signalLogout();
 

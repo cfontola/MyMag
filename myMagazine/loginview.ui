@@ -6,45 +6,74 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>511</width>
-    <height>548</height>
+    <width>432</width>
+    <height>517</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>loginView</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">text-align:center;</string>
+  </property>
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>100</y>
-     <width>341</width>
-     <height>91</height>
+     <x>60</x>
+     <y>50</y>
+     <width>301</width>
+     <height>151</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>45</pointsize>
+     <weight>9</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">font: 75 45pt &quot;Arial&quot;;
-color: rgb(13, 105, 239);
+color:  rgb(208,8,35);
+text-align:center;
+   
 </string>
    </property>
    <property name="text">
-    <string>myMagazine</string>
+    <string>my Magazine</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="exitbtn">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>60</y>
+     <x>40</x>
+     <y>40</y>
      <width>61</width>
-     <height>21</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
-	background-color: rgb(13, 105, 239);
+    background-color:  rgb(255,0,0);
     border-radius: 3px;
-	color: white;
+	color: black;
 }
 QPushButton:pressed {
     background-color: rgb(203, 218, 249);
@@ -55,11 +84,11 @@ QPushButton:pressed {
     <string>Esci</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_7">
+  <widget class="QLabel" name="label_psw">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>340</y>
+     <x>180</x>
+     <y>300</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -73,27 +102,11 @@ font:  75 13pt &quot;Helvetica Neue&quot;;</string>
     <string>Password</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>190</y>
-     <width>101</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 13pt &quot;Helvetica Neue&quot;;</string>
-   </property>
-   <property name="text">
-    <string>Log in Utente</string>
-   </property>
-  </widget>
   <widget class="Line" name="line_2">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>240</y>
+     <x>160</x>
+     <y>200</y>
      <width>111</width>
      <height>20</height>
     </rect>
@@ -105,8 +118,8 @@ font:  75 13pt &quot;Helvetica Neue&quot;;</string>
   <widget class="QLineEdit" name="user_usn">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>300</y>
+     <x>160</x>
+     <y>260</y>
      <width>111</width>
      <height>21</height>
     </rect>
@@ -122,8 +135,8 @@ font: 7pt &quot;.SF NS Text&quot;;</string>
   <widget class="QLineEdit" name="user_pass">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>370</y>
+     <x>160</x>
+     <y>330</y>
      <width>111</width>
      <height>21</height>
     </rect>
@@ -140,8 +153,8 @@ font: 7pt &quot;.SF NS Text&quot;;
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>270</y>
+     <x>180</x>
+     <y>230</y>
      <width>91</width>
      <height>21</height>
     </rect>
@@ -158,17 +171,23 @@ font: 75 13pt &quot;Helvetica Neue&quot;;</string>
   <widget class="QPushButton" name="usloginbtn">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>420</y>
-     <width>61</width>
-     <height>21</height>
+     <x>180</x>
+     <y>380</y>
+     <width>71</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
+    background-color:  rgb(255,0,0);
     border-radius: 3px;
-	color: white;
+	color: black;
 }
 QPushButton:pressed {
     background-color: rgb(203, 218, 249);

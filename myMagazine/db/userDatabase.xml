@@ -15,17 +15,10 @@
         <sesso>Maschio</sesso>
     </admin>
     <manager>
-        <username>carius95</username>
-        <password>137950</password>
-        <nome>sdef</nome>
-        <cognome>wsdef</cognome>
+        <username>mario</username>
+        <password>password</password>
+        <nome>Mario</nome>
+        <cognome>Rossi</cognome>
         <sesso>Maschio</sesso>
     </manager>
-    <admin>
-        <username>admin2</username>
-        <password>password</password>
-        <nome>ciao</nome>
-        <cognome>bella</cognome>
-        <sesso>Femmina</sesso>
-    </admin>
 </database>

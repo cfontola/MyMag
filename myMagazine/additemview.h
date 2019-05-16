@@ -29,7 +29,9 @@ private:
 public slots:
     void Cancel();
     void Confirm();
-    void updatebtns();
+    void update();
+    void setGraphics();
+
 signals:
     void signalCancel();
     void signalConfirm();

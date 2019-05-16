@@ -3,11 +3,12 @@
 #include "admin.h"
 #include <QDebug>
 
+
 //---COSTRUTTORE---
 
 Database::Database() {}
 
-//---RIDEFINIZIONE DISTRUTTORE---
+
 Database::~Database(){
     //svuoto entrambi i database
     emptyUserDb();
@@ -86,9 +87,9 @@ void Database::addItem(const Item* a){
     }
 }
 
-void Database::deleteItem(const QString& cod){
-    if(findItem(cod))
-        itemDatabase.pop_element(findItem(cod));
+void Database::deleteItem(const QString& c){
+    if(findItem(c))
+        itemDatabase.pop_element(findItem(c));
 }
 
 const User* Database::findUser(const QString& usn) const{
@@ -131,8 +132,7 @@ void Database::emptyItemDb(){
 //----LOAD E SAVE USER----
 
 void Database::loadUserDb(){
-    //var. temp;
-    //c.d. user;
+
     QString username;
     QString password;
     QString name;
@@ -141,15 +141,15 @@ void Database::loadUserDb(){
 
     bool file=true;
 
-    QFile userFile("C:/Users/Carlo/Desktop/db/userDatabase.xml");
-    if(!userFile.open(QFile::ReadOnly | QFile::Text)){
+    QFile UserFile("C:/Users/Carlo/Desktop/myMagazine/db/userDatabase.xml");
+    if(!UserFile.open(QFile::ReadOnly | QFile::Text)){
         std::cout<<"Users database not found, load failed!"<<std::endl;
         file=false;
     }
 
     if(file){
 
-    QXmlStreamReader xmlReader(&userFile);
+    QXmlStreamReader xmlReader(&UserFile);
     xmlReader.readNext();
 
     while(!xmlReader.atEnd()){
@@ -167,12 +167,12 @@ void Database::loadUserDb(){
             else if(xmlReader.name()=="sesso")
                 sex=xmlReader.readElementText();
         }
-        else if(xmlReader.isEndElement() && xmlReader.name()=="manager"){    // legge </manager>
+        else if(xmlReader.isEndElement() && xmlReader.name()=="manager"){    // </manager>
             Manager* manager=new Manager(username,password,name,surname,sex);
             userDatabase.push_back(manager);
             xmlReader.readNext();
         }
-        else if(xmlReader.isEndElement() && xmlReader.name()=="admin"){    // legge </admin>
+        else if(xmlReader.isEndElement() && xmlReader.name()=="admin"){    // </admin>
             Admin* admin=new Admin(username,password,name,surname,sex);
             userDatabase.push_back(admin);
             xmlReader.readNext();
@@ -180,14 +180,13 @@ void Database::loadUserDb(){
         else
             xmlReader.readNext();
     }
-    std::cout<<"Users database loaded!"<<std::endl;
+    std::cout<<"Users db loaded"<<std::endl;
 
-    userFile.close();
+    UserFile.close();
     }
 }
 
 void Database::loadItemDb(){
-    //var. temporanee
 
     //----item----
     QString user;
@@ -216,15 +215,15 @@ void Database::loadItemDb(){
     //QString MaterialQ;
     QString MaterialC;
 
-    QFile itemFile("C:/Users/Carlo/Desktop/db/itemDatabase.xml");
+    QFile ItemFile("C:/Users/Carlo/Desktop/myMagazine/db/itemDatabase.xml");
     bool file=true;
 
-    if(!itemFile.open(QFile::ReadOnly | QFile::Text)){
+    if(!ItemFile.open(QFile::ReadOnly | QFile::Text)){
         std::cout<<"Item database not found, load failed!"<<std::endl;
         file=false;
     }
 
-    QXmlStreamReader xmlReader(&itemFile); //Creates a new stream reader that reads from device.
+    QXmlStreamReader xmlReader(&ItemFile); //Creates a new stream reader that reads from device.
     xmlReader.readNext();
 
     if(file){
@@ -296,18 +295,18 @@ void Database::loadItemDb(){
         else
             xmlReader.readNext();
     }
-    std::cout<<"Item database loaded!"<<std::endl;
+    std::cout<<"Item db loaded"<<std::endl;
 
-    itemFile.close();
+    ItemFile.close();
     }
 }
 
 void Database::saveUserDb(){
-    QFile userFile("C:/Users/Carlo/Desktop/db/userDatabase.xml");
+    QFile userFile("C:/Users/Carlo/Desktop/myMagazine/db/userDatabase.xml");
     bool file=true;
 
     if(!userFile.open(QIODevice::WriteOnly)){
-        std::cout<<"Users database not found, saving failed!"<<std::endl;
+        std::cout<<"Users database not found"<<std::endl;
         file=false;
     }
 
@@ -320,21 +319,21 @@ void Database::saveUserDb(){
 
     if(!userDatabase.isEmpty())
         for(Container<const User*>::Iterator it=userDatabase.begin(); it!=userDatabase.end(); ++it)
-           userDatabase[it]->writeUser(xmlWriter);     //PRONTO PER ESTENSIBILITA' POLIMORFA
+           userDatabase[it]->writeUser(xmlWriter);
 
     xmlWriter.writeEndDocument();
 
-    std::cout<<"Users database saved!"<<std::endl;
+    std::cout<<"Users db saved"<<std::endl;
     userFile.close();
     }
 }
 
 void Database::saveItemDb(){
-    QFile animalFile("C:/Users/Carlo/Desktop/db/itemDatabase.xml");
+    QFile animalFile("C:/Users/Carlo/Desktop/myMagazine/db/itemDatabase.xml");
     bool file=true;
 
     if(!animalFile.open(QIODevice::WriteOnly)){
-        std::cout<<"Item database not found, saving failed!"<<std::endl;
+        std::cout<<"Item database not found"<<std::endl;
         file=false;
     }
 
@@ -347,11 +346,11 @@ void Database::saveItemDb(){
 
     if(!itemDatabase.isEmpty())
         for(Container<const Item*>::Iterator it=itemDatabase.begin(); it!=itemDatabase.end(); ++it)
-            itemDatabase[it]->SaveItem(xmlWriter);     //PRONTO PER ESTENSIBILITA' POLIMORFA
+            itemDatabase[it]->SaveItem(xmlWriter);
 
     xmlWriter.writeEndDocument();
 
-    std::cout<<"Item database saved!"<<std::endl;
+    std::cout<<"Item db saved"<<std::endl;
     animalFile.close();
     }
 }

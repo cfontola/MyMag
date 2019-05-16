@@ -15,8 +15,8 @@ public:
     loginView(QWidget* = 0);
     ~loginView();
     void setGraphic();
-    QLineEdit* getUusn() const;
-    QLineEdit* getUpass() const;
+    QLineEdit* getUsn() const;
+    QLineEdit* getPass() const;
 private:
     Ui::loginView* ui;
 

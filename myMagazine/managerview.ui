@@ -31,9 +31,9 @@
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
+    background-color:  rgb(255,0,0);
     border-radius: 3px;
-	color: white;
+	color: black;
 }
 QPushButton:pressed {
     background-color: rgb(203, 218, 249);
@@ -109,11 +109,16 @@ QPushButton:pressed {
    <widget class="QWidget" name="ricerca" native="true">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>0</y>
-      <width>771</width>
+      <x>120</x>
+      <y>10</y>
+      <width>631</width>
       <height>121</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
@@ -183,13 +188,13 @@ QPushButton:pressed {
       <font>
        <family>.SF NS Text</family>
        <pointsize>9</pointsize>
-       <weight>50</weight>
+       <weight>75</weight>
        <italic>false</italic>
-       <bold>false</bold>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 9pt &quot;.SF NS Text&quot;;</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Ricerca per</string>
@@ -235,7 +240,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 10pt &quot;Arial&quot;;</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Tipo:</string>
@@ -252,9 +257,9 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
+    background-color:  rgb(255,0,0);
     border-radius: 3px;
-	color: white;
+	color: black;
 }
 QPushButton:pressed {
     background-color: rgb(203, 218, 249);
@@ -314,25 +319,6 @@ QPushButton:pressed {
       <string>Brand</string>
      </property>
     </widget>
-    <widget class="QLabel" name="logged">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>20</y>
-       <width>181</width>
-       <height>18</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 9pt &quot;.SF NS Text&quot;;</string>
-     </property>
-     <property name="text">
-      <string>Logged in as:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
     <widget class="QPushButton" name="addItem">
      <property name="geometry">
       <rect>
@@ -344,9 +330,9 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
+    background-color:  rgb(255,0,0);
     border-radius: 3px;
-	color: white;
+	color: black;
 }
 QPushButton:pressed {
     background-color: rgb(203, 218, 249);
@@ -357,30 +343,25 @@ QPushButton:pressed {
       <string>ADD ITEM</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="refresh">
-     <property name="geometry">
-      <rect>
-       <x>630</x>
-       <y>80</y>
-       <width>75</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
-    border-radius: 3px;
-	color: white;
-}
-QPushButton:pressed {
-    background-color: rgb(203, 218, 249);
-	color: black;
-}</string>
-     </property>
-     <property name="text">
-      <string>LOAD ALL</string>
-     </property>
-    </widget>
+   </widget>
+   <widget class="QLabel" name="logged">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>410</y>
+      <width>181</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Logged as:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

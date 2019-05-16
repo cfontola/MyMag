@@ -24,6 +24,7 @@ void registrationView::setGraphic(){
     setWindowTitle("Registrazione utente - myMagazine");
     ui->passEdit->setEchoMode(QLineEdit::Password);
     ui->confirmPassword->setEchoMode(QLineEdit::Password);
+    ui->passEdit->setPlaceholderText("Min 5 caratteri");
 
     connect(ui->cancelbtn,SIGNAL(clicked()),this,SLOT(closeRegistration()));
     connect(ui->confirmbtn,SIGNAL(clicked()),this,SLOT(tryRegistration()));

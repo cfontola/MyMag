@@ -1,7 +1,7 @@
 #ifndef CONTAINER_H
 #define CONTAINER_H
 
-//Contenitore templetizzato con smartPointer ed iteratori per manipolare dati.
+//Contenitore templetizzato con smartPointer ed iteratori.
 
 
 
@@ -9,8 +9,8 @@ template<class T>
 class Container{
     friend class Iterator;
 private:
-    unsigned int  items;  //conta il numero di elementi nel contenitore
-    class Nodo; //dich. incompleta
+    unsigned int  items;
+    class Nodo;
 
     class smartP{
     public:
@@ -26,7 +26,7 @@ private:
         ~smartP(){
             if(punt!=0){
                 punt->riferimenti--;
-                if(punt->riferimenti==0) delete punt;  //delete standard di nodo che richiama (ricorsivamente)
+                if(punt->riferimenti==0) delete punt;  //delete standard di nodo che richiama
             }                                          //il distruttore di smartP
         }
 
@@ -44,15 +44,15 @@ private:
             return *this;
         }
 
-        //RIDEF. OPERATORI
+        //----------RIDEFINIZIONE OPERATORI
 
-        bool operator==(const smartP& smp) const { return punt==smp.punt; } //Uguaglianza
+        bool operator==(const smartP& smp) const { return punt==smp.punt; }
 
-        bool operator!=(const smartP& smp) const { return punt!=smp.punt; } //Disuguaglianza
+        bool operator!=(const smartP& smp) const { return punt!=smp.punt; }
 
-        Nodo& operator*() const {return *punt;} //Dereferenziazione
+        Nodo& operator*() const {return *punt;}
 
-        Nodo* operator->() const {return punt;} //Accesso a membro
+        Nodo* operator->() const {return punt;}
 
     };  //fine classe smartP
 
@@ -66,7 +66,7 @@ private:
 
 
 
-    smartP first;   //unico campo dati privato del contenitore
+    smartP first;   //unico campo dati privato
 
 
 
@@ -76,7 +76,7 @@ public:
     private:
         Container::smartP punt;
     public:
-        //ITERATOR FORNISCE:
+
 
         //Prefisso
         Iterator& operator++(){
@@ -98,7 +98,7 @@ public:
         bool operator==(const Iterator& cit) const{ return punt==cit.punt; }
         bool operator!=(const Iterator& cit) const{ return punt!=cit.punt; }
 
-    };  //FINE CLASSE ITERATOR
+    };  //fine classe iterator
 
 
 
@@ -118,7 +118,7 @@ public:
         return *this;
     }
 
-    //Metodi
+    //------------------METODI
     unsigned int size() const {return items;}
 
     bool isEmpty() const { return first==0; }
@@ -129,11 +129,11 @@ public:
     }
 
     void push_back(const T& t){
-        if(first==0) first=new Nodo(t,0);   //non c'era alcun elemento nel contenitore
+        if(first==0) first=new Nodo(t,0);
         else{
             smartP aux=first;
-            while(aux->next != 0) aux=aux->next; //scorro fino all'ultimo
-            aux->next=new Nodo(t,0); //collego un nodo dopo l'ultimo
+            while(aux->next != 0) aux=aux->next;
+            aux->next=new Nodo(t,0);
         }
          items++;
     }
@@ -144,6 +144,22 @@ public:
              items--;
         }
     }
+
+
+    void pop_back(){
+        if(first!=0){
+            if(first->next!=0){
+                smartP prec=first;
+                smartP aux=first->next;
+                while(aux->next != 0) {prec=prec->next; aux=aux->next;}
+                prec->next=0;
+            }
+            else
+                first=0;
+            items--;
+        }
+    }
+
 
     void pop_element(T element){
             smartP p=first;
@@ -165,21 +181,9 @@ public:
     }
 
 
-    void pop_back(){
-        if(first!=0){
-            if(first->next!=0){
-                smartP prec=first;
-                smartP aux=first->next;
-                while(aux->next != 0) {prec=prec->next; aux=aux->next;}
-                prec->next=0;
-            }
-            else
-                first=0;
-            items--;
-        }
-    }
 
-    //Metodi che usano iteratore
+
+
 
     Iterator begin() const{
         Iterator inizio;
@@ -197,7 +201,7 @@ public:
         return (cit.punt)->info;
     }
 
-};  //FINE TEMPLATE DI CLASSE Container
+};  //FINE CLASSE CONTAINER
 
 
 #endif // CONTAINER_H

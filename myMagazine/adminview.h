@@ -38,13 +38,15 @@ public slots:
     void openItemData(int);
     void addItemData();
     void closeUserData();
+    void closeItemData();
     void openRegistrationView();
     void closeRegistrationView();
-    void refreshtable();
+    void closeadditemadata();
     void userRegistration(const QString&,const QString&,const QString&,const QString&,const QString&,const QString&);
 signals:
     void signalLogout();
     void signalOpenRegistration();
+
 
 
 };

@@ -15,23 +15,22 @@ adminView::adminView(User*a,QWidget *parent) :
     addItemUI(0),
     itemDataUI(0),
     DB(0)
+
 {
 
     ui->setupUi(this);
     this->move(QApplication::desktop()->availableGeometry().center() - this->rect().center());
     setFixedSize(this->geometry().width(),this->geometry().height());
-    setWindowTitle("admin control panel - myMagazine");
-    ui->logged->setText("Logged in as: " + admin->getUsername());
+    setWindowTitle("Admin panel - myMagazine");
+    ui->logged->setText("Logged as : " + admin->getUsername());
     connect(ui->usertable,SIGNAL(cellClicked(int,int)),this,SLOT(openUserData(int)));
     connect(ui->itemtable,SIGNAL(cellClicked(int,int)),this,SLOT(openItemData(int)));
     connect(ui->addItem,SIGNAL(clicked()),this,SLOT(addItemData()));
     connect(ui->addUtente,SIGNAL(clicked()),this,SLOT(openRegistrationView()));
     connect(ui->logoutbtn,SIGNAL(clicked()),this,SLOT(Logout()));
-    connect(ui->Refresh,SIGNAL(clicked()),this,SLOT(refreshtable()));
     DB=new Database();
     DB->loadUserDb();
     DB->loadItemDb();
-    item=DB->getItemDb();
     loadUserTable();
     loadItemTable();
     ui->itemtable->setSelectionMode(QAbstractItemView::NoSelection);
@@ -53,7 +52,7 @@ void adminView::loadUserTable(){
         QTableWidgetItem* usn = new QTableWidgetItem(db[it]->getUsername());
         QTableWidgetItem* name = new QTableWidgetItem(db[it]->getName());
         QTableWidgetItem* surname = new QTableWidgetItem(db[it]->getSurname());
-        QTableWidgetItem* type = new QTableWidgetItem(db[it]->Type()); // DB[it]-> Type() == CHIAMATA POLIMORFA
+        QTableWidgetItem* type = new QTableWidgetItem(db[it]->Type());
 
 
         usn->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEnabled);
@@ -111,7 +110,7 @@ void adminView::userRegistration(const QString& usn, const QString& pass, const 
             Manager* manager = new Manager(usn,pass,nam,sur,sx);
             DB->addUser(manager);
             QMessageBox* msg=new QMessageBox();
-            msg->setText("Utente registrato correttamente.");
+            msg->setText("Utente registrato correttamente");
             msg->addButton("OK",QMessageBox::AcceptRole);
             msg->setAttribute(Qt::WA_DeleteOnClose);
             msg->show();
@@ -120,17 +119,18 @@ void adminView::userRegistration(const QString& usn, const QString& pass, const 
             Admin* admin = new Admin(usn,pass,nam,sur,sx);
             DB->addUser(admin);
             QMessageBox* msg=new QMessageBox();
-            msg->setText("Admin registrato correttamente.");
+            msg->setText("Admin registrato correttamente");
             msg->addButton("OK",QMessageBox::AcceptRole);
             msg->setAttribute(Qt::WA_DeleteOnClose);
             msg->show();
         }
         closeRegistrationView();
+        loadUserTable();
 
     }
     else{
         QMessageBox* msg=new QMessageBox();
-        msg->setText("Username già utilizzato. Prova con uno diverso.");
+        msg->setText("Username già utilizzato. Prova con uno differente.");
         msg->addButton("OK",QMessageBox::AcceptRole);
         msg->setAttribute(Qt::WA_DeleteOnClose);
         msg->show();
@@ -165,11 +165,15 @@ void adminView::openItemData(int row){
   if(itemDataUI){
       itemDataUI->hide(); delete itemDataUI;
       itemDataUI = new itemDataView(itemx,DB);
+      connect(itemDataUI,SIGNAL(signaldeleteItem()),this,SLOT(closeItemData()));
+      connect(itemDataUI,SIGNAL(signalSave()),this,SLOT(closeItemData()));
       itemDataUI->show();
 
   }
   else{
       itemDataUI = new itemDataView(itemx,DB);
+      connect(itemDataUI,SIGNAL(signaldeleteItem()),this,SLOT(closeItemData()));
+      connect(itemDataUI,SIGNAL(signalSave()),this,SLOT(closeItemData()));
       itemDataUI->show();
   }
 }
@@ -182,6 +186,17 @@ void adminView::closeUserData(){
         userDataUI=0;
     }
     loadUserTable();
+    loadItemTable();
+
+}
+
+void adminView::closeItemData(){
+    if(itemDataUI) {
+        itemDataUI->hide();
+        delete itemDataUI;
+        itemDataUI=0;
+    }
+    loadItemTable();
 }
 
 void adminView::Logout(){
@@ -190,15 +205,19 @@ void adminView::Logout(){
     emit signalLogout();
 }
 
-void adminView::refreshtable()
-{
+void adminView::closeadditemadata(){
+    if(addItemUI){
+        addItemUI->hide();
+        delete addItemUI;
+        addItemUI=0;
+    }
     loadItemTable();
-    loadUserTable();
 }
+
 
 void adminView::addItemData()
 {
     addItemUI = new addItemView(admin,DB);
-    connect(addItemUI,SIGNAL(signalConfirm()),this,SLOT(refreshtable()));
+    connect(addItemUI,SIGNAL(signalConfirm()),this,SLOT(closeadditemadata()));
     addItemUI->show();
 }

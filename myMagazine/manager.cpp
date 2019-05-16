@@ -1,5 +1,5 @@
 #include "manager.h"
-//#include "database.h"
+
 
 Manager::Manager(const QString& usn, const QString& psw, const QString& nm, const QString& sur, const QString& sx):
     User(usn,psw,nm,sur,sx) {}

@@ -16,6 +16,7 @@ TEMPLATE = app
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
+QMAKE_CXXFLAGS += -std=c++11
 
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -24,8 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        loginview.cpp \
+    main.cpp \
     item.cpp \
     notebook.cpp \
     smartphone.cpp \
@@ -42,10 +42,14 @@ SOURCES += \
     userdataview.cpp \
     additemview.cpp \
     itemdataview.cpp \
-    smartwatch.cpp
+    smartwatch.cpp \
+    loginview.cpp \
+
+
+
 
 HEADERS += \
-        loginview.h \
+    loginview.h \
     item.h \
     notebook.h \
     smartphone.h \
@@ -63,13 +67,22 @@ HEADERS += \
     userdataview.h \
     additemview.h \
     itemdataview.h \
-    smartwatch.h
+    smartwatch.h \
+
+
+
+
+
 
 FORMS += \
-        loginview.ui \
+    loginview.ui \
     adminview.ui \
     managerview.ui \
     registrationview.ui \
     userdataview.ui \
     additemview.ui \
     itemdataview.ui
+
+DISTFILES += \
+    db/itemDatabase.xml \
+    db/userDatabase.xml

@@ -16,12 +16,12 @@ loginView::~loginView()
     delete ui;
 }
 
-QLineEdit* loginView::getUusn() const {return ui->user_usn;}
-QLineEdit* loginView::getUpass() const {return ui->user_pass;}
+QLineEdit* loginView::getUsn() const {return ui->user_usn;}
+QLineEdit* loginView::getPass() const {return ui->user_pass;}
 
 void loginView::setGraphic(){
     setWindowTitle("Log in - myMagazine");
-    setFixedWidth(480);
+    setFixedWidth(500);
 
     ui->user_usn->setPlaceholderText("Inserisci Username");
     ui->user_pass->setPlaceholderText("Inserisci Password");

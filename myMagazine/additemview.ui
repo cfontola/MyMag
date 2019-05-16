@@ -46,9 +46,9 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
+    background-color:  rgb(255,0,0);
     border-radius: 3px;
-	color: white;
+	color: black;
 }
 QPushButton:pressed {
     background-color: rgb(203, 218, 249);
@@ -67,6 +67,12 @@ QPushButton:pressed {
      <width>201</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Inserimento nuovo Oggetto</string>
@@ -119,9 +125,9 @@ QPushButton:pressed {
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
+    background-color:  rgb(255,0,0);
     border-radius: 3px;
-	color: white;
+	color: black;
 }
 QPushButton:pressed {
     background-color: rgb(203, 218, 249);

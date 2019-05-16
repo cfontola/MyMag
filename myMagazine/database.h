@@ -28,8 +28,8 @@ public:
     Container<const Item*> getSmartwatch() const;
 
 
-    bool matchUser(const QString& ) const;  //true sse matcha un username nel db utenti
-    bool verifyUser(const QString& usn,const QString& psw) const; //true sse username e password presenti associati nel db
+    bool matchUser(const QString& ) const;  //true sse matcha un username
+    bool verifyUser(const QString& usn,const QString& psw) const; //true sse username e password presenti
 
     void addUser(const User* );
     void deleteUser(const User* );
@@ -39,7 +39,7 @@ public:
 
 
     const User* findUser(const QString& usn) const;
-    const User* getUser(const QString& , const QString& ) const; //ritorna ptn all'utente verificato
+    const User* getUser(const QString& , const QString& ) const; //ritorna puntatore all'utente
 
     const Item* findItem(const QString& id) const;
 

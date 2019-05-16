@@ -17,7 +17,7 @@ private:
 public:
     Admin(const QString& usn,const QString& psw, const QString& nm, const QString& sur, const QString& sx);
 
-    //metodi virtuali puri
+    //implementazione metodi virtuali puri
     virtual void writeUser(QXmlStreamWriter& xmlWriter) const;
     virtual void openUI(User* u);
     virtual const QString Type() const;

@@ -20,7 +20,13 @@ itemDataView::itemDataView(Item* a,Database*db,QWidget *parent) :
   setFixedSize(this->geometry().width(),this->geometry().height());
   setWindowTitle("Gestione dati item");
   loadItemData();
+  ui->iDEdit->setReadOnly(true);
+  ui->iDlabel->setDisabled(true);
   this->move(QApplication::desktop()->availableGeometry().center() - this->rect().center());
+  connect(ui->confirmbtn,SIGNAL(clicked()),this,SLOT(saveChanges()));
+  connect(ui->cancelbtn,SIGNAL(clicked()),this,SLOT(deleteItem()));
+
+
 
 }
 
@@ -101,13 +107,13 @@ void itemDataView::loadItemData(){
 
 void itemDataView::deleteItem(){
     QMessageBox::StandardButton question;
-    question=QMessageBox::question(this,"Elimina oggetto","Eliminare oggettp selezionato dal magazzino?",QMessageBox::Yes|QMessageBox::No);
+    question=QMessageBox::question(this,"Elimina oggetto","Eliminare oggetto selezionato dal magazzino?",QMessageBox::Yes|QMessageBox::No);
     if(question==QMessageBox::Yes){
         QString codice = item->getId();
         DB->deleteItem(codice);
     }
     DB->saveItemDb();
-    this->close();
+    emit signaldeleteItem();
 }
 
 void itemDataView::saveChanges(){
@@ -201,12 +207,3 @@ void itemDataView::saveChanges(){
 
 
 
-void itemDataView::on_confirmbtn_clicked()
-{
-    saveChanges();
-}
-
-void itemDataView::on_cancelbtn_clicked()
-{
-    deleteItem();
-}

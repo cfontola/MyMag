@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
-    <Notebook>
-        <User>carius95</User>
-        <Id>789456</Id>
-        <Brand>Xiaomi</Brand>
-        <Processor>jjhgyju</Processor>
-        <Model>yt</Model>
-        <Display>0</Display>
-        <Price>0</Price>
-        <Memory>0</Memory>
-        <Backlight>0</Backlight>
-        <GPU>YTC</GPU>
-        <Fanless>0</Fanless>
-    </Notebook>
     <Smartphone>
         <User>cfontola</User>
         <Id>123456</Id>
@@ -41,19 +28,6 @@
     </Notebook>
     <Notebook>
         <User>cfontola</User>
-        <Id>1234568</Id>
-        <Brand>Dikom</Brand>
-        <Processor>Intel</Processor>
-        <Model>Tv</Model>
-        <Display>15</Display>
-        <Price>499</Price>
-        <Memory>45</Memory>
-        <Backlight>0</Backlight>
-        <GPU>CIAO</GPU>
-        <Fanless>0</Fanless>
-    </Notebook>
-    <Notebook>
-        <User>cfontola</User>
         <Id>789465</Id>
         <Brand>Lenovo</Brand>
         <Processor>Intel i7</Processor>
@@ -69,14 +43,14 @@
         <User>cfontola</User>
         <Id>456456</Id>
         <Brand>Fitbit</Brand>
-        <Processor>bo</Processor>
-        <Model>bo</Model>
+        <Processor>Qualcomm</Processor>
+        <Model>Charge</Model>
         <Display>2.5</Display>
         <Price>99</Price>
         <Memory>2</Memory>
         <Sensor>cardiac</Sensor>
         <Certificate>ip67</Certificate>
-        <Material_C>pelle</Material_C>
+        <Material_C>gum</Material_C>
     </Smartwatch>
     <Smartphone>
         <User>cfontola</User>
@@ -95,41 +69,28 @@
         <User>cfontola</User>
         <Id>789852</Id>
         <Brand>Xiaomi</Brand>
-        <Processor>dd</Processor>
-        <Model>jj</Model>
-        <Display>78</Display>
-        <Price>78</Price>
-        <Memory>78</Memory>
-        <Sensor>cardi</Sensor>
+        <Processor>Xiaomi</Processor>
+        <Model>Miband</Model>
+        <Display>0</Display>
+        <Price>29</Price>
+        <Memory>0</Memory>
+        <Sensor>0</Sensor>
         <Certificate>ip68</Certificate>
-        <Material_C>gold</Material_C>
+        <Material_C>gum</Material_C>
     </Smartwatch>
     <Notebook>
         <User>cfontola</User>
         <Id>852147</Id>
         <Brand>Xiaomi</Brand>
-        <Processor>Inte</Processor>
-        <Model>uiiu</Model>
-        <Display>12</Display>
-        <Price>12</Price>
-        <Memory>12</Memory>
-        <Backlight>0</Backlight>
-        <GPU>FDDFF</GPU>
+        <Processor>Intel i5</Processor>
+        <Model>Laptop Air</Model>
+        <Display>13.3</Display>
+        <Price>649</Price>
+        <Memory>128</Memory>
+        <Backlight>1</Backlight>
+        <GPU>INTEL HD</GPU>
         <Fanless>1</Fanless>
     </Notebook>
-    <Smartphone>
-        <User>cfontola</User>
-        <Id>DFGDSF</Id>
-        <Brand>Huawei</Brand>
-        <Processor>Qualcomm</Processor>
-        <Model>P8 lite</Model>
-        <Display>4.8</Display>
-        <Price>189</Price>
-        <Memory>16</Memory>
-        <FingerPrint>1</FingerPrint>
-        <Cam1>12</Cam1>
-        <Cam2>4</Cam2>
-    </Smartphone>
     <Smartphone>
         <User>cfontola</User>
         <Id>951357</Id>
@@ -144,16 +105,42 @@
         <Cam2>5</Cam2>
     </Smartphone>
     <Smartphone>
-        <User>cfontola</User>
-        <Id>43543</Id>
-        <Brand>dfgfd</Brand>
-        <Processor>dfgdfdfg</Processor>
-        <Model>dfgdf</Model>
-        <Display>56</Display>
-        <Price>55</Price>
-        <Memory>56</Memory>
-        <FingerPrint>0</FingerPrint>
-        <Cam1>56</Cam1>
-        <Cam2>56</Cam2>
+        <User>mario</User>
+        <Id>457826</Id>
+        <Brand>Huawei</Brand>
+        <Processor>Qualcomm</Processor>
+        <Model>P8lite</Model>
+        <Display>4.7</Display>
+        <Price>189</Price>
+        <Memory>16</Memory>
+        <FingerPrint>1</FingerPrint>
+        <Cam1>12</Cam1>
+        <Cam2>5</Cam2>
     </Smartphone>
+    <Notebook>
+        <User>mario</User>
+        <Id>328514</Id>
+        <Brand>HP</Brand>
+        <Processor>AMD</Processor>
+        <Model>Pavillon</Model>
+        <Display>15</Display>
+        <Price>589</Price>
+        <Memory>256</Memory>
+        <Backlight>1</Backlight>
+        <GPU>AMD</GPU>
+        <Fanless>0</Fanless>
+    </Notebook>
+    <Smartwatch>
+        <User>mario</User>
+        <Id>741965</Id>
+        <Brand>Samsung</Brand>
+        <Processor>Samsung</Processor>
+        <Model>GearS</Model>
+        <Display>2.5</Display>
+        <Price>299</Price>
+        <Memory>8</Memory>
+        <Sensor>Cardi</Sensor>
+        <Certificate>ip68</Certificate>
+        <Material_C>Al</Material_C>
+    </Smartwatch>
 </item>

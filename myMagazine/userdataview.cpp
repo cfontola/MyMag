@@ -39,16 +39,13 @@ void userDataView::Cancel(){
 }
 
 void userDataView::Confirm(){
-    qDebug()<<"confirm";
     if(ui->name->text()==""){
         QErrorMessage* error =new QErrorMessage();
-        error->setAttribute(Qt::WA_DeleteOnClose);
         error->showMessage("Campo nome non può rimanere vuoto");
     }
 
     else if(ui->surname->text()==""){
         QErrorMessage* error =new QErrorMessage();
-        error->setAttribute(Qt::WA_DeleteOnClose);
         error->showMessage("Campo cognome non può rimanere vuoto");
     }
     else{
@@ -58,7 +55,7 @@ void userDataView::Confirm(){
         if(ui->radioM->isChecked()) sex="Maschio";
         if(ui->radioF->isChecked()) sex="Femmina";
 
-        if(user->Type()=="Magazziniere"){
+        if(user->Type()=="Manager"){
             User* u = const_cast<User*>(DB->findUser(user->getUsername()));
             u->setName(name);
             u->setSurname(surname);
@@ -68,11 +65,12 @@ void userDataView::Confirm(){
 
         emit signalConfirm();
     }
+
 }
 
 void userDataView::deleteUser(){
     QMessageBox::StandardButton question;
-    question=QMessageBox::question(this,"Elimina utente","Eliminare utente da database?",QMessageBox::Yes|QMessageBox::No);
+    question=QMessageBox::question(this,"Elimina utente","Eliminare utente? ATTENZIONE verranno anche eliminati gli oggetti ad esso associati",QMessageBox::Yes|QMessageBox::No);
     if(question==QMessageBox::Yes){
         User* u = const_cast<User*>(DB->findUser(user->getUsername()));
         for(auto it=item.begin(); it!=item.end(); ++it){ //elimino tutti gli oggetti associati all'user rimosso
@@ -85,6 +83,7 @@ void userDataView::deleteUser(){
     DB->saveItemDb();
     DB->saveUserDb();
     this->close();
+    emit signalCancel();
 }
 
 

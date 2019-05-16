@@ -19,8 +19,8 @@ void myMagazineController::openLoginView(){
         delete aController;
         aController=0;
     }
-    startUI->getUusn()->clear();
-    startUI->getUpass()->clear();
+    startUI->getUsn()->clear();
+    startUI->getPass()->clear();
     startUI->show();
 }
 

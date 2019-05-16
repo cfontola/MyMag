@@ -26,10 +26,17 @@
     <property name="labelAlignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
-    <item row="2" column="0">
-     <widget class="QLabel" name="inserisiUsernameLabel">
+    <item row="1" column="1">
+     <widget class="QCheckBox" name="TypeBox">
       <property name="text">
-       <string>Inserisci username</string>
+       <string>Admin</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="UsernameLabel">
+      <property name="text">
+       <string>Username</string>
       </property>
      </widget>
     </item>
@@ -39,44 +46,34 @@
     <item row="3" column="0">
      <widget class="QLabel" name="inserisciPasswordMinimo5CaratteriLabel">
       <property name="text">
-       <string>Inserisci password</string>
+       <string>Password</string>
       </property>
      </widget>
     </item>
     <item row="3" column="1">
      <widget class="QLineEdit" name="passEdit"/>
     </item>
-    <item row="4" column="1">
-     <widget class="QLabel" name="label_2">
-      <property name="styleSheet">
-       <string notr="true">font: 9pt &quot;.SF NS Text&quot;;</string>
-      </property>
-      <property name="text">
-       <string>(minimo 5 caratteri)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
+    <item row="4" column="0">
      <widget class="QLabel" name="confermaPasswordLabel">
       <property name="text">
        <string>Conferma Password</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="1">
+    <item row="4" column="1">
      <widget class="QLineEdit" name="confirmPassword"/>
     </item>
-    <item row="6" column="0">
+    <item row="5" column="0">
      <widget class="QLabel" name="nomeLabel">
       <property name="text">
        <string>Nome</string>
       </property>
      </widget>
     </item>
-    <item row="6" column="1">
+    <item row="5" column="1">
      <widget class="QLineEdit" name="nomeLineEdit"/>
     </item>
-    <item row="7" column="0">
+    <item row="6" column="0">
      <widget class="QLabel" name="cognomeLabel">
       <property name="text">
        <string>Cognome</string>
@@ -86,20 +83,20 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="1">
+    <item row="6" column="1">
      <widget class="QLineEdit" name="cognomeLineEdit"/>
     </item>
-    <item row="9" column="0">
+    <item row="8" column="0">
      <widget class="QLabel" name="label_3">
       <property name="text">
        <string>Sesso:</string>
       </property>
      </widget>
     </item>
-    <item row="9" column="1">
+    <item row="8" column="1">
      <widget class="QRadioButton" name="radioM">
       <property name="text">
-       <string>&amp;Maschio</string>
+       <string>&amp;M</string>
       </property>
       <property name="checked">
        <bool>true</bool>
@@ -107,19 +104,12 @@
      </widget>
     </item>
     <item row="10" column="1">
-     <widget class="QRadioButton" name="radioF">
-      <property name="text">
-       <string>Femmi&amp;na</string>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="1">
      <widget class="QPushButton" name="confirmbtn">
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
+    background-color:  rgb(255,0,0);
     border-radius: 3px;
-	color: white;
+	color: black;
 }
 QPushButton:pressed {
     background-color: rgb(203, 218, 249);
@@ -134,13 +124,13 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="12" column="1">
+    <item row="11" column="1">
      <widget class="QPushButton" name="cancelbtn">
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
+    background-color:  rgb(255,0,0);
     border-radius: 3px;
-	color: white;
+	color: black;
 }
 QPushButton:pressed {
     background-color: rgb(203, 218, 249);
@@ -152,10 +142,10 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QCheckBox" name="TypeBox">
+    <item row="9" column="1">
+     <widget class="QRadioButton" name="radioF">
       <property name="text">
-       <string>Admin</string>
+       <string>F</string>
       </property>
      </widget>
     </item>
@@ -170,12 +160,33 @@ QPushButton:pressed {
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>.SF NS Text</family>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">font: 11pt &quot;.SF NS Text&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
-    <string>Modulo registrazione nuovo utente. 
-Compilare tutti i campi della form per registrare un nuovo utente.</string>
+    <string>Registrazione Nuovo Utente/Admin</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>120</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

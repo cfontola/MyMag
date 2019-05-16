@@ -13,7 +13,6 @@ private:
 
 public:
     Manager(const QString& usn, const QString& psw, const QString& nm, const QString& sur, const QString& sx);
-    //...IMPLEMENTAZIONE METODI VIRTUALI PURI DELLA CLASSE USER...
 
     virtual void writeUser(QXmlStreamWriter& xmlWriter) const;
     virtual void openUI(User* u);

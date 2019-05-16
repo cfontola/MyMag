@@ -29,18 +29,14 @@ private:
 
 
 public slots:
-
-    //void Cancel();
     void saveChanges();
     void deleteItem();
-    //void updatebtns();
+
 signals:
     void signalCancel();
     void signalSave();
-    void signaldeleteItem(const QString&);
-private slots:
-    void on_confirmbtn_clicked();
-    void on_cancelbtn_clicked();
+    void signaldeleteItem();
+
 };
 
 #endif // ITEMDATAVIEW_H

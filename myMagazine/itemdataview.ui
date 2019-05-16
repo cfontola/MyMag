@@ -178,9 +178,9 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
+    background-color:  rgb(255,0,0);
     border-radius: 3px;
-	color: white;
+	color: black;
 }
 QPushButton:pressed {
     background-color: rgb(203, 218, 249);
@@ -222,35 +222,14 @@ QPushButton:pressed {
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Modifica Oggetto</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="confirmbtn">
-   <property name="geometry">
-    <rect>
-     <x>202</x>
-     <y>430</y>
-     <width>101</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-	background-color:  rgb(13, 105, 239);
-    border-radius: 3px;
-	color: white;
-}
-QPushButton:pressed {
-    background-color: rgb(203, 218, 249);
-	color: black;
-}</string>
-   </property>
-   <property name="text">
-    <string>Conferma</string>
-   </property>
-   <property name="default">
-    <bool>true</bool>
    </property>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget_8">
@@ -445,6 +424,30 @@ QPushButton:pressed {
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="confirmbtn">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>430</y>
+     <width>91</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color:  rgb(255,0,0);
+    border-radius: 3px;
+	color: black;
+}
+QPushButton:pressed {
+    background-color: rgb(203, 218, 249);
+	color: black;
+}</string>
+   </property>
+   <property name="text">
+    <string>Conferma</string>
+   </property>
   </widget>
  </widget>
  <resources/>
