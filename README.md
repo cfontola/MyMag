@@ -1,6 +1,6 @@
 -------------------------------MyMag---------------------------------
 
----Per aprire l'applicativo: Qt --> Open Project --> selezionare file .pro all'interno della repository --> scegliere il compilatore MinGw e confermare
+---Per avviare l'applicativo: Qt --> Open Project --> selezionare file .pro all'interno della repository --> scegliere il compilatore MinGw e confermare
 
 --- dati account:
      || Admin:   admin:password
